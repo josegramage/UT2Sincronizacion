@@ -4,10 +4,12 @@ public class CoffeeStore {
 	    private int soldCoffees;
 	     
 	    private void someLongRunningProcess() throws InterruptedException {
-	        Thread.sleep(3000);
+	    	//reduzco el tiempo (de 3.000 a 1.000) para que no tarde tanto
+	        Thread.sleep(1000);
 	    }
 	     
-	    public void buyCoffee(String client) throws InterruptedException {
+	    //añado el método snychronized
+	    public synchronized void buyCoffee(String client) throws InterruptedException {
 	        someLongRunningProcess();
 	        lastClient = client;
 	        soldCoffees++;
